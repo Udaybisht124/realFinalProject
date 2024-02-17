@@ -1,0 +1,65 @@
+
+:root
+{
+    --primary:#16a085;
+    --secondary:#1abc9c;
+    --light:#ecf0f1;
+    --white:#fff;
+    --dark:#34495e;
+    --black:#2c3e50;
+}
+/*
+serach
+*/
+#search
+{
+    background: var(--black);
+}
+#search .h2
+{
+    font-weight: normal;
+    color:var(--secondary);
+}
+
+#search input
+{
+    color:var(--light);
+    background-color: var(--dark);
+}
+#search input::placeholder
+{
+    color:var(--light);
+}
+
+/*
+    main data container css
+*/
+article
+{
+    margin: 1rem auto;
+    padding:1rem;
+    color:var(--light);
+    background: var(--dark);
+    border-radius: 10px;
+}
+article:hover
+{
+    box-shadow: 3px 2px 10px var(--dark);
+}
+.btn
+{
+    font-weight: bold;
+}
+/*
+    footer
+*/
+
+#footer
+{
+    /* background: var(--black); */
+}
+#footer a
+{
+    color:var(--primary);
+    text-decoration: none;
+}
