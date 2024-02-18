@@ -1,7 +1,7 @@
 
 /*
     target data
-*/ 
+*/
 
 let main_data_container = document.getElementById('main_data_container')
 
@@ -11,22 +11,25 @@ let data_list = document.getElementsByClassName('article')
 
 /*
     { layout function } =====================================================
-*/ 
-function layout(elements)
-{
+*/
+function layout(elements) {
     return (`
     
         <article class="d-flex justify-content-between align-items-center py-3 article">
         
-            <div class="h4"> ${ elements.campus } </div>
+            <div class="h4"> ${elements.university} </div>
 
-            <div class="h4"> ${ elements.subject } </div>
+            <div class="h4"> ${elements.subject} </div>
             
-            <div class="h4"> ${ elements.stream  } </div>
+            <div class="h4"> ${elements.stream} </div>
+
             
-            <div class="h4"> ${ elements.year } </div>
+            <div class="h4"> ${elements.semester} </div>
+
+
+            <div class="h4"> ${elements.year} </div>
             
-            <a href="${ elements.url }" class="btn btn-outline-success"> Download </a>
+            <a href="${elements.url}" class="btn btn-outline-success"> Download </a>
             
         </article>
 
@@ -37,11 +40,10 @@ function layout(elements)
     -----------------------------------------------------------------------------
         set layout with data iteration
     -----------------------------------------------------------------------------
-*/ 
+*/
 
-for (let i = 0; i < data.length; i++)
-{
-    main_data_container.insertAdjacentHTML("afterend",`${ layout(data[i]) }`)
+for (let i = 0; i < data.length; i++) {
+    main_data_container.insertAdjacentHTML("afterend", `${layout(data[i])}`)
 }
 
 /*
@@ -53,18 +55,15 @@ searchbar.onkeyup = () => {
     search = searchbar.value.toLowerCase()
 
     console.log(search)
-    
-    for (let i = 0; i < data_list.length; i++)
-    {
+
+    for (let i = 0; i < data_list.length; i++) {
         data = data_list[i].firstElementChild.innerHTML.toLowerCase()
-        
-        if (data.includes(search))
-        {
+
+        if (data.includes(search)) {
             data_list[i].classList.add('d-block')
             // data_list[i].style.display = 'block !important'
         }
-        else
-        {
+        else {
             data_list[i].classList.add('d-none')
             // data_list[i].style.display = 'none !important'
         }
